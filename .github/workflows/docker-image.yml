@@ -17,4 +17,4 @@ jobs:
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag bmartell/web_server:$(date +%s)
     - name: Push the image to DockerHub
-      run: docker login -u bmartelldocker -p ${{ token }} && docker push bmartell/web_server
+      run: docker login -u bmartelldocker -p ${{ secrets.DOCKER_TOKEN }} && docker push bmartell/web_server
